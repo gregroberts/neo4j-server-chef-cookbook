@@ -51,7 +51,7 @@ tmp_spatial = File.join(td, "neo4j-spatial-#{node.neo4j.server.plugins.spatial.v
 
 remote_file(tmp) do
   source node.neo4j.server.tarball.url
-
+  
   not_if "which neo4j"
 end
 
@@ -127,6 +127,8 @@ template "/etc/init.d/neo4j" do
   owner 'root'
   mode  0755
 end
+
+# Before the service starts, add GraphAware stuff here.
 
 service "neo4j" do
   supports :start => true, :stop => true, :restart => true
