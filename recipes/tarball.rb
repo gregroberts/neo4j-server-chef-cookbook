@@ -129,6 +129,7 @@ template "/etc/init.d/neo4j" do
 end
 
 # Before the service starts, add GraphAware stuff here.
+# http://products.graphaware.com/
 
 service "neo4j" do
   supports :start => true, :stop => true, :restart => true
